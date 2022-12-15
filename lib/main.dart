@@ -176,7 +176,7 @@ class _MyAppState extends State<MyApp> {
                     child: const Text('Page 3'),
                   ),
                 ],
-              )
+              ),
             ],
           ),
         ),

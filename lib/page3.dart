@@ -7,7 +7,31 @@ class Page3 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Page 3')),
-      body: const Text('Page3'),
+      body: ListView(
+        children: [
+          ListTile(
+            leading: const Icon(Icons.access_alarm),
+            title: const Text('Lets go to page 3'),
+            subtitle: const Text('This is now in page 3'),
+            trailing: const Icon(Icons.arrow_right_sharp),
+            onTap: () {},
+          ),
+          ListTile(
+            leading: const Icon(Icons.access_alarm),
+            title: const Text('Lets go to page 3'),
+            subtitle: const Text('This is now in page 3'),
+            trailing: const Icon(Icons.arrow_right_sharp),
+            onTap: () {},
+          ),
+          ListTile(
+            leading: const Icon(Icons.access_alarm),
+            title: const Text('Lets go to page 3'),
+            subtitle: const Text('This is now in page 3'),
+            trailing: const Icon(Icons.arrow_right_sharp),
+            onTap: () {},
+          ),
+        ],
+      ),
     );
   }
 }
