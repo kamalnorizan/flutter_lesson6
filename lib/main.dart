@@ -1,17 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:lesson6/models/user.dart';
 import 'package:lesson6/page2.dart';
 import 'package:lesson6/page3.dart';
 
 void main() => runApp(
-      MaterialApp(
+      const MaterialApp(
         initialRoute: '/',
-        routes: {
-          '/': (context) => const MyApp(),
-          // '/page2': (context) => const Page2(),
-          '/page3': (context) => const Page3(),
-        },
+        onGenerateRoute: _getRoute,
+        // routes: {
+        //   '/': (context) => const MyApp(),
+        //   '/page2': (context) => Page2('test'),
+        //   '/page3': (context) => const Page3(),
+        // },
+        home: MyApp(),
       ),
     );
+
+Route<dynamic> _getRoute(RouteSettings settings) {
+  print(settings);
+  if (settings.name == '/page2') {
+    List<User> user = settings.arguments as List<User>;
+    return _buildRoute(settings, Page2(user));
+  } else if (settings.name == '/page3') {
+    return _buildRoute(settings, const Page3());
+  }
+
+  return _buildRoute(settings, const Page3());
+}
+
+MaterialPageRoute _buildRoute(RouteSettings settings, Widget builder) {
+  return MaterialPageRoute(builder: (ctx) => builder);
+}
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
@@ -107,12 +126,20 @@ class _MyAppState extends State<MyApp> {
                       shape: const StadiumBorder(),
                     ),
                     onPressed: () {
+                      var obj = [
+                        User(name: 'Amir'),
+                        User(name: 'Aiman'),
+                        User(name: 'Zaid'),
+                        User(name: 'Diana'),
+                        User(name: 'Fairul'),
+                      ];
+
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                            builder: (context) => Page2(nameController.text)),
+                        MaterialPageRoute(builder: (context) => Page2(obj)),
                       );
-                      // Navigator.pushNamed(context, '/page2');
+
+                      // Navigator.pushNamed(context, '/page2', arguments: obj);
                     },
                     child: const Text('Page 2'),
                   ),
