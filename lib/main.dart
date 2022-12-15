@@ -3,8 +3,13 @@ import 'package:lesson6/page2.dart';
 import 'package:lesson6/page3.dart';
 
 void main() => runApp(
-      const MaterialApp(
-        home: MyApp(),
+      MaterialApp(
+        initialRoute: '/',
+        routes: {
+          '/': (context) => const MyApp(),
+          '/page2': (context) => const Page2(),
+          '/page3': (context) => const Page3(),
+        },
       ),
     );
 
@@ -98,10 +103,11 @@ class _MyAppState extends State<MyApp> {
                       shape: const StadiumBorder(),
                     ),
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const Page2()),
-                      );
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(builder: (context) => const Page2()),
+                      // );
+                      Navigator.pushNamed(context, '/page2');
                     },
                     child: const Text('Page 2'),
                   ),
@@ -110,10 +116,12 @@ class _MyAppState extends State<MyApp> {
                       shape: const StadiumBorder(),
                     ),
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const Page3()),
-                      );
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(builder: (context) => const Page3()),
+                      // );
+
+                      Navigator.pushNamed(context, '/page3');
                     },
                     child: const Text('Page 3'),
                   ),
