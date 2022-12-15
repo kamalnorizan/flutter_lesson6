@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lesson6/widgets/drawer.dart';
 
 class Page4 extends StatelessWidget {
   const Page4({super.key});
@@ -9,6 +10,7 @@ class Page4 extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Material App Bar'),
       ),
+      drawer: const CustomDrawer(),
       body: Column(
         children: const [
           Center(

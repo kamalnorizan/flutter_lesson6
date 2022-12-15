@@ -4,6 +4,7 @@ import 'package:lesson6/page2.dart';
 import 'package:lesson6/page3.dart';
 import 'package:lesson6/page4.dart';
 import 'package:lesson6/page5.dart';
+import 'package:lesson6/widgets/drawer.dart';
 
 void main() => runApp(
       const MaterialApp(
@@ -63,6 +64,7 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: const Text('Buttons'),
         ),
+        drawer: const CustomDrawer(),
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           currentIndex: 0,

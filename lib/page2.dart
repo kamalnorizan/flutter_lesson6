@@ -35,9 +35,9 @@ class Page2 extends StatelessWidget {
           //   );
           // }).toList(),
           children: [
-            Text('Ni tab 1'),
+            TextField(),
             Text('Ni tab 2'),
-            Text('Ni tab 3'),
+            SelectableText('Ni tab 3'),
           ],
         ),
       ),

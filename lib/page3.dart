@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lesson6/widgets/drawer.dart';
 
 class Page3 extends StatelessWidget {
   const Page3({Key? key}) : super(key: key);
@@ -7,6 +8,7 @@ class Page3 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Page 3')),
+      drawer: const CustomDrawer(),
       body: ListView(
         children: [
           ListTile(
