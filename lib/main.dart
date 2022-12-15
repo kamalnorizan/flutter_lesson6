@@ -57,6 +57,24 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: const Text('Buttons'),
         ),
+        bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          currentIndex: 0,
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.album_rounded),
+              label: 'About',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.phone),
+              label: 'Contact Us',
+            ),
+          ],
+        ),
         body: Center(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
