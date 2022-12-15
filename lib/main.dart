@@ -7,7 +7,7 @@ void main() => runApp(
         initialRoute: '/',
         routes: {
           '/': (context) => const MyApp(),
-          '/page2': (context) => const Page2(),
+          // '/page2': (context) => const Page2(),
           '/page3': (context) => const Page3(),
         },
       ),
@@ -23,6 +23,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
+    var nameController = TextEditingController();
     String dropdownvalue = 'Item 3';
     var items = [
       'Item 1',
@@ -88,6 +89,9 @@ class _MyAppState extends State<MyApp> {
                 onPressed: () {},
                 child: const Text('Button'),
               ),
+              TextField(
+                controller: nameController,
+              ),
               ButtonBar(
                 alignment: MainAxisAlignment.center,
                 children: [
@@ -103,11 +107,12 @@ class _MyAppState extends State<MyApp> {
                       shape: const StadiumBorder(),
                     ),
                     onPressed: () {
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(builder: (context) => const Page2()),
-                      // );
-                      Navigator.pushNamed(context, '/page2');
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Page2(nameController.text)),
+                      );
+                      // Navigator.pushNamed(context, '/page2');
                     },
                     child: const Text('Page 2'),
                   ),
