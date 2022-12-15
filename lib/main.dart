@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:lesson6/models/user.dart';
 import 'package:lesson6/page2.dart';
 import 'package:lesson6/page3.dart';
+import 'package:lesson6/page4.dart';
+import 'package:lesson6/page5.dart';
 
 void main() => runApp(
       const MaterialApp(
@@ -23,6 +25,10 @@ Route<dynamic> _getRoute(RouteSettings settings) {
     return _buildRoute(settings, Page2(user));
   } else if (settings.name == '/page3') {
     return _buildRoute(settings, const Page3());
+  } else if (settings.name == '/page4') {
+    return _buildRoute(settings, const Page4());
+  } else if (settings.name == '/page5') {
+    return _buildRoute(settings, const Page5());
   }
 
   return _buildRoute(settings, const Page3());

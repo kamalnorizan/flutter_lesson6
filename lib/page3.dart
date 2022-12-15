@@ -21,14 +21,21 @@ class Page3 extends StatelessWidget {
             title: const Text('Lets go to page 3'),
             subtitle: const Text('This is now in page 3'),
             trailing: const Icon(Icons.arrow_right_sharp),
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, '/page5');
+            },
           ),
           ListTile(
-            leading: const Icon(Icons.access_alarm),
+            leading: const Hero(
+              tag: 'page4-tag',
+              child: Icon(Icons.alarm),
+            ),
             title: const Text('Lets go to page 3'),
             subtitle: const Text('This is now in page 3'),
             trailing: const Icon(Icons.arrow_right_sharp),
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, '/page4');
+            },
           ),
         ],
       ),
